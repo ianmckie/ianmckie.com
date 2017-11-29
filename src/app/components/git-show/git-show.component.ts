@@ -21,12 +21,9 @@ export class GitShowComponent implements OnInit {
             name: gitEvent.repo.name.split('ianmckie/')[1],
             message : gitEvent.payload.commits[0].message,
             createdAt: gitEvent.created_at,
-            url: gitEvent.repo.url
+            url: 'https://github.com/'+gitEvent.repo.name
           }
           this.repos.push(pushEvent);
-        }
-        else{
-          x--;
         }
       }
     });

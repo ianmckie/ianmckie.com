@@ -1,9 +1,11 @@
 <div class="card">
+  <div class="fly-out"><img title="View my github activity" src="assets/img/github-icon.png"></div>
   <div class="card-header">
     <img title="Ian Mckie Github" src="https://avatars1.githubusercontent.com/u/26541553?s=460&v=4" />
     <h4>My Latest Git Activity</h4>
   </div>
-  <a *ngFor = 'let repo of repos' href="{{ repo.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+  <a *ngFor = 'let repo of repos' href="{{ repo.url }}" target="_blank" 
+    class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{ repo.name }}</h5>
       <small>{{ repo.createdAt | daysAgo }}</small>
