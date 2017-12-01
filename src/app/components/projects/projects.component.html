@@ -1,0 +1,10 @@
+<div class="projects" *ngFor = 'let project of projects'>
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="{{ project.image }}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{ project.title }}</h4>
+          <p class="card-text">{{ project.excerpt }}</p>
+          <a href="/project/{{ project.id }}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</div>
