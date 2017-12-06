@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<div class="overflow-wrapper">
+    
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+
+                <header class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand"><img src="assets/img/logo.png" /></h3>
+                        <nav class="nav nav-masthead">
+                            <a class="nav-link active" routerLink="/">Home</a>
+                            <a class="nav-link" routerLink="/projects">Projects</a>
+                        </nav>
+                    </div><!-- END .inner -->
+                </header>
+
+                <router-outlet></router-outlet>
+
+                <footer class="mastfoot">
+                    <div class="inner">
+                        made by me
+                    </div><!-- END .inner -->
+                </footer>
+
+            </div>
+        </div>
+
+        <!-- GIT Component -->
+        <app-git-show></app-git-show>
+
+    </div><!-- END .site-wrapper -->
+
+</div><!-- END .overflow-wrapper -->

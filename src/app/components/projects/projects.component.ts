@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CacheInteceptor } from '../../interceptors/cache-inteceptor';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -12,7 +13,6 @@ export class ProjectsComponent implements OnInit {
   
   constructor(private dataservice:DataService) {
     this.dataservice.getProjects().subscribe((response) => {
-      console.log(response);
 
       for(let x = 0; x < response.length; x++){
         let project: object = {

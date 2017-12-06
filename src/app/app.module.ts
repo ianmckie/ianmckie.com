@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http'
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
 
+import { CacheInteceptor } from './interceptors/cache-inteceptor';
 import { DataService } from './services/data.service';
 
 import { AppComponent } from './app.component';
@@ -37,7 +39,12 @@ const appRoutes: Routes = [
     )
   ],
   providers: [
-    DataService
+    DataService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInteceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

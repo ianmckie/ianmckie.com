@@ -12,8 +12,10 @@ export class GitShowComponent implements OnInit {
 
   constructor(private dataservice:DataService) {
 
+   }
+
+  ngOnInit() {
     this.dataservice.getGitCommits().subscribe((response) => {
-      
       for(let x = 0; x < 4; x++){
         let gitEvent = response[x];
         if(gitEvent.type === 'PushEvent'){
@@ -27,10 +29,5 @@ export class GitShowComponent implements OnInit {
         }
       }
     });
-
-   }
-
-  ngOnInit() {
   }
-
 }
